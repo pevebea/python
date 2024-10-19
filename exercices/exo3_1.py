@@ -1,5 +1,5 @@
 
-# Signe dun nombre
+# Signe d'un nombre
 entry = float(input("Entre un nombre: "))
 
 if entry > 0:
@@ -7,11 +7,4 @@ if entry > 0:
 else:
     print(f"{entry} est un nombre negatif")
     
-
-
-
-
-# Autre methode en deux ligne
-# signe = "Positif" if entry > 0 else "negatif"
-# print(f"{entry} est un nombre {signe}")
 

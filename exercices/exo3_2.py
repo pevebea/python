@@ -2,7 +2,7 @@
 x = int(input("entrez un premier nombre: "))
 y = int(input("entrez un second nombre: "))
 
-if x * y > 0:
+if (x > 0 and y > 0) or (x < 0 and y < 0):
     signe = "Positif"
 else:
     signe = "Negatif"

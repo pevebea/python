@@ -10,7 +10,6 @@ elif age >= 8:
     category = "Pupille"
 elif age >= 6:
     category = "Poussin"
-
 else:
     category = "Inconnu"
 
