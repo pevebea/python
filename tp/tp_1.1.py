@@ -15,9 +15,9 @@ essai_restant  = 10 # nombre de tentatives de l'utilisateur
 facie = 1
 moyen = 2
 difficile = 3
-continuer = True
+continuer = False
 
-while continuer:
+while not continuer:
     print("Bienvenu dans le jeu du devinette:\n1.Facile\n2.Moyen\n3.Difficile")
     choix_utilisateur = int(input("choisir le niveau: "))
     if choix_utilisateur == 1:
@@ -41,7 +41,13 @@ while continuer:
     print(f"il vous reste {essai_restant} tentatives")
 
     if essai_restant == 0:
-        print("Game over !!!")
+        print("Game over Vous avez perdu !!!")
+    
+    print("Voulez vous continuer ?\nAppuer sur n'importe quelle touche pour quitter ou y pour continuer")
+    choix_utilisateur = input("taper y / n: ")
+    if choix_utilisateur == "y":
+        continuer = True
+
     
     
 
