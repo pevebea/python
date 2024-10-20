@@ -8,48 +8,52 @@
 
 # TP 1: Deviner le nombre
 import random
+continuer = True
 
-nombre_mister = random.randint(0, 100)
-essai_restant  = 10 # nombre de tentatives de l'utilisateur
+while continuer:
+  print("\nBienvenu dans le jeu 'DEVINE LE NOMBRE'")
+  print("Difficultes:")
+  print("1. Niveau facile 10 essais")
+  print("2. Niveau moyen 5 essais")
+  print("3. Niveau Difficile 3 essais")
+  print("4. Niveau expert 1 essais")
 
-facie = 1
-moyen = 2
-difficile = 3
-continuer = False
+  choix_niveau = int(input("taper 1, 2, 3 ou 4: "))
+  if choix_niveau == 1:
+    essai_restant = 10
+  elif choix_niveau == 2:
+    essai_restant = 5
+  elif choix_niveau == 3:
+    essai_restant = 3
+  elif choix_niveau == 4:
+    essai_restant = 1
+  else:
+    essai_restant = 0
 
-while not continuer:
-    print("Bienvenu dans le jeu du devinette:\n1.Facile\n2.Moyen\n3.Difficile")
-    choix_utilisateur = int(input("choisir le niveau: "))
-    if choix_utilisateur == 1:
-        essai_restant = 10
-    elif choix_utilisateur == 2:
-        essai_restant = 5
-    elif choix_utilisateur == 3:
-        essai_restant = 3
 
-    player_number = int(input("Deviner le nombre entre (1 et 100): "))
+  nombre_mister = random.randint(0, 100)
+  while essai_restant > 0:
+      player_number = int(input("Deviner le nombre entre (1 et 100): "))
 
-    if nombre_mister > player_number:
-        print("plus grand !")
-    elif nombre_mister < player_number:
-        print(f"plus petit !")
-    else:
-        print("FELICITATION, VOUS AVEZ TROUVER LE NOMBRE A DEVINER !!!")
-        exit() # stopper le programme si le mombre est trouver
+      if nombre_mister > player_number:
+          print("plus grand !")
+      elif nombre_mister < player_number:
+          print(f"plus petit !")
+      else:
+          print("FELICITATION, VOUS AVEZ TROUVER LE NOMBRE A DEVINER !!!")
+          exit() # stopper le programme si le mombre est trouver
+      
+      essai_restant -= 1  # essai_restant = essai_restant - 1
+      print(f"il vous reste {essai_restant} tentatives")
+      if essai_restant == 0:
+        print(f"Partie terminee, vous avez perdu, le nombre mistere etait {nombre_mister}")
+
     
-    essai_restant -= 1  # essai_restant = essai_restant - 1
-    print(f"il vous reste {essai_restant} tentatives")
 
-    if essai_restant == 0:
-        print("Game over Vous avez perdu !!!")
-    
-    print("Voulez vous continuer ?\nAppuer sur n'importe quelle touche pour quitter ou y pour continuer")
-    choix_utilisateur = input("taper y / n: ")
-    if choix_utilisateur == "y":
-        continuer = True
+  rejouer = input("voulez vous rejouer ou quiter? taper q/r")
+  if rejouer == "q":
+    continuer = False
 
-    
-    
 
 
 
