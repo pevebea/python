@@ -27,6 +27,7 @@ while continuer:
         essai_restant = 1
     else:
         essai_restant = 0
+        print("entree incorrecte, merci de recommencer le jeu   \n")
 
 
     nombre_mister = random.randint(0, 100)
@@ -41,7 +42,6 @@ while continuer:
             print("FELICITATION, VOUS AVEZ TROUVER LE NOMBRE A DEVINER !!!")
             exit() # stopper le programme si le mombre est trouver
 
-
         essai_restant -= 1  # essai_restant = essai_restant - 1
         
         if essai_restant == 0:
@@ -49,8 +49,6 @@ while continuer:
         elif essai_restant > 0:
             print(f"il vous reste {essai_restant} tentatives")
 
-    
-
-    rejouer = input("voulez vous rejouer ou quiter? taper q/r")
+    rejouer = input("voulez vous rejouer ou quiter?\nN'importe quelle touche pour continuer ou q pour quitter\ntaper q/r")
     if rejouer == "q":
         continuer = False
